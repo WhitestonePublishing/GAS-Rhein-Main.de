@@ -43,7 +43,8 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 
 - [x] Anmeldeformular eingebunden (iframe von p263.de)
 - [ ] Anbieter des Anmeldeformulars (p263.de) mit Name/Anschrift und AV-Vertrag in `datenschutz.html` ergänzen
-- [ ] Impressum: Vereinsanschrift, Registergericht, VR-Nummer, Telefon, Verantwortlicher nach § 18 MStV
+- [x] Impressum: Anschrift, Kontakt, Verantwortlicher, technische Umsetzung
+- [ ] Impressum: Registergericht und VR-Nummer, Name des stellvertretenden Vorsitzenden
 - [ ] Stellvertretender Vorsitzender: Name und Foto
 - [ ] Kuratorium: Fotos (Pascal Weinmann, Andreas Litwin, Benjamin Grießl, Sascha Eiteneuer)
 - [ ] Partner- und Sponsorenlogos
