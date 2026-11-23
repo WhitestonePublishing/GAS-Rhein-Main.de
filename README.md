@@ -1,7 +1,7 @@
 # gas-rhein-main.de
 
 Webseite des **1. Gefahrenabwehrsymposiums Rhein-Main** am Samstag, 13. März 2027, in der Mehrzweckhalle Butzbach-Nieder-Weisel.
-Veranstalter: Gefahrenabwehrsymposium Rhein-Main e.V. · Schirmherr: Bürgermeister Sascha Huber
+Veranstalter: Gefahrenabwehrsymposium Rhein-Main e.V. i.G. · Schirmherr: Bürgermeister Sascha Huber
 
 Rein statische Seite (HTML, CSS, etwas JavaScript), ohne Build-Schritt und ohne externe Dienste. Die Schriften (Barlow, SIL Open Font License) liegen lokal.
 
