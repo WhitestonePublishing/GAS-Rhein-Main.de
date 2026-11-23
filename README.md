@@ -24,8 +24,21 @@ downloads/              Programm als PDF
 
 ## Veröffentlichen (Strato)
 
-Den gesamten Inhalt dieses Repositorys (ohne `.git`) per SFTP in das Webverzeichnis der Domain `www.gas-rhein-main.de` hochladen.
-Danach in der `.htaccess` die HTTPS-Umleitung aktivieren, sobald das SSL-Zertifikat aktiv ist.
+Jeder Push auf `main` lädt die Seite automatisch per SFTP auf den Strato-Webspace (`.github/workflows/deploy.yml`). Manuell auslösbar unter **Actions → Veröffentlichen (Strato SFTP) → Run workflow**.
+
+**Einmalige Einrichtung** unter *Settings → Secrets and variables → Actions*:
+
+| Art | Name | Inhalt |
+|---|---|---|
+| Variable | `SFTP_HOST` | z. B. `ssh.strato.de` |
+| Variable | `SFTP_USER` | SFTP-Benutzername |
+| Variable | `SFTP_TARGET_DIR` | Zielordner der Domain, z. B. `/gas-rhein-main` |
+| Secret | `SFTP_PASSWORD` | Passwort des SFTP-Benutzers |
+
+Solange etwas fehlt, wird der Upload übersprungen. Hochgeladen werden nur neue oder geänderte Dateien; auf dem Server wird nichts gelöscht.
+Nicht übertragen werden `.git/`, `.github/`, `README.md` und `.gitignore`.
+
+Nach Aktivierung des SSL-Zertifikats in der `.htaccess` die HTTPS-Umleitung einschalten.
 
 ## Vorschau-Sperre (Testphase)
 

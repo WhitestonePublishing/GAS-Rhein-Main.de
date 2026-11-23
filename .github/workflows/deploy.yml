@@ -1,0 +1,80 @@
+# Veröffentlicht die Webseite per SFTP auf dem Strato-Webspace.
+#
+# Einrichtung (einmalig, im GitHub-Repository unter
+# Settings → Secrets and variables → Actions):
+#
+#   Variables (Reiter "Variables"):
+#     SFTP_HOST        z. B. ssh.strato.de
+#     SFTP_USER        SFTP-Benutzername bei Strato
+#     SFTP_TARGET_DIR  Zielordner der Domain, z. B. /gas-rhein-main
+#
+#   Secrets (Reiter "Secrets"):
+#     SFTP_PASSWORD    Passwort des SFTP-Benutzers
+#
+# Solange etwas davon fehlt, wird der Upload übersprungen (kein Fehler).
+
+name: Veröffentlichen (Strato SFTP)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-strato
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Konfiguration prüfen
+        id: cfg
+        env:
+          HOST: ${{ vars.SFTP_HOST }}
+          USER: ${{ vars.SFTP_USER }}
+          DIR: ${{ vars.SFTP_TARGET_DIR }}
+          PASS: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          missing=""
+          [ -z "$HOST" ] && missing="$missing SFTP_HOST"
+          [ -z "$USER" ] && missing="$missing SFTP_USER"
+          [ -z "$DIR" ]  && missing="$missing SFTP_TARGET_DIR"
+          [ -z "$PASS" ] && missing="$missing SFTP_PASSWORD"
+          if [ -n "$missing" ]; then
+            echo "::notice::Upload übersprungen – noch nicht eingerichtet:$missing"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Repository auschecken
+        if: steps.cfg.outputs.ready == 'true'
+        uses: actions/checkout@v4
+
+      - name: lftp installieren
+        if: steps.cfg.outputs.ready == 'true'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Per SFTP hochladen
+        if: steps.cfg.outputs.ready == 'true'
+        env:
+          HOST: ${{ vars.SFTP_HOST }}
+          USER: ${{ vars.SFTP_USER }}
+          DIR: ${{ vars.SFTP_TARGET_DIR }}
+          LFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          lftp -c "
+            set sftp:auto-confirm yes;
+            set net:max-retries 2;
+            set net:timeout 30;
+            open --env-password -u \"$USER\" sftp://$HOST;
+            mirror --reverse --verbose --only-newer --parallel=4 \
+              --exclude-glob .git/ \
+              --exclude-glob .github/ \
+              --exclude-glob README.md \
+              --exclude-glob .gitignore \
+              ./ \"$DIR\";
+            bye
+          "
+          echo "::notice::Veröffentlicht nach $HOST:$DIR"
