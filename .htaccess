@@ -6,6 +6,7 @@ AddDefaultCharset UTF-8
 # MIME-Typen
 AddType font/woff2 .woff2
 AddType image/webp .webp
+AddType image/svg+xml .svg
 
 # Auf HTTPS und www umleiten – erst aktivieren, wenn das SSL-Zertifikat
 # für www.gas-rhein-main.de bei Strato aktiv ist:
@@ -28,6 +29,7 @@ AddType image/webp .webp
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/jpeg "access plus 1 month"
   ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
   ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType application/pdf "access plus 1 day"
 </IfModule>

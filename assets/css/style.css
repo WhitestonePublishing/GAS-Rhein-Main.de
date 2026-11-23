@@ -194,12 +194,15 @@ p { margin: 0; }
 .logo-slot--filled { border: 1.5px solid #E4DFD4; transition: transform .15s, box-shadow .15s, border-color .15s; }
 .logo-slot--filled:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(13,27,42,.10); border-color: #C9C2B3; }
 .logo-slot picture { display: contents; }
+.logo-slot--wide { grid-column: span 2; padding: 16px 28px; }
 .logo-slot--small img { max-height: 90px; max-width: 100%; }
 .tier { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
 .tier small { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 #sponsoren { border-top: 1px solid #DDD7CA; }
 #partner.section { padding-bottom: 72px; }
-#sponsoren.section { padding-top: 72px; }
+#sponsoren.section { padding-top: 72px; padding-bottom: 72px; }
+#aussteller { border-top: 1px solid #DDD7CA; }
+#aussteller.section { padding-top: 72px; }
 
 /* Anmeldung */
 .register { display: flex; flex-wrap: wrap; gap: 56px; }
