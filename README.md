@@ -35,9 +35,15 @@ Jeder Push auf `main` lädt die Seite automatisch per SFTP auf WSP-Server01 (Ple
 | Variable | `SFTP_TARGET_DIR` | z. B. `/httpdocs` |
 | Variable (optional) | `SFTP_PROTOCOL` | `sftp` (Standard) oder `ftps` |
 | Variable (optional) | `SFTP_PORT` | Standard 22 bzw. 21 |
-| Secret | `SFTP_PASSWORD` | Passwort des SFTP-Benutzers |
+| Secret | `SFTP_PRIVATE_KEY` | privater SSH-Schlüssel (SFTP mit Schlüssel – empfohlen, der Server erlaubt per SSH keine Passwort-Anmeldung) |
+| Secret | `SFTP_PASSWORD` | Passwort (nur für `SFTP_PROTOCOL=ftps`) |
 
 Für SFTP muss in Plesk beim Abonnement unter *Hosting-Einstellungen → Zugriff auf den Server über SSH* „/bin/bash (chrooted)“ o. Ä. gesetzt sein; sonst `SFTP_PROTOCOL=ftps` verwenden.
+**SSH-Schlüssel einrichten (einmalig):**
+1. Schlüsselpaar erzeugen (z. B. in PowerShell): `ssh-keygen -t ed25519 -C "github-deploy-gas" -f gas_deploy -N '""'`
+2. Inhalt von `gas_deploy.pub` in Plesk beim Systembenutzer des Abonnements hinterlegen (Erweiterung „SSH Keys“ oder Datei `.ssh/authorized_keys` im Home-Verzeichnis des Abonnements).
+3. Inhalt von `gas_deploy` (privater Schlüssel, komplett inkl. BEGIN/END-Zeilen) als Secret `SFTP_PRIVATE_KEY` speichern. Danach die lokalen Schlüsseldateien sicher ablegen oder löschen.
+
 Solange etwas fehlt, wird der Upload übersprungen. Hochgeladen werden nur neue oder geänderte Dateien; auf dem Server wird nichts gelöscht.
 Nicht übertragen werden `.git/`, `.github/`, `README.md` und `.gitignore`.
 
