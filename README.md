@@ -41,8 +41,8 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 
 - [ ] Vorschau-Sperre entfernen (siehe oben)
 
-- [ ] Anmeldeformular: iframe-URL in `index.html` (Abschnitt `#anmeldung`) eintragen
-- [ ] Anbieter des Anmeldeformulars in `datenschutz.html` nennen
+- [x] Anmeldeformular eingebunden (iframe von p263.de)
+- [ ] Anbieter des Anmeldeformulars (p263.de) mit Name/Anschrift und AV-Vertrag in `datenschutz.html` ergänzen
 - [ ] Impressum: Vereinsanschrift, Registergericht, VR-Nummer, Telefon, Verantwortlicher nach § 18 MStV
 - [ ] Stellvertretender Vorsitzender: Name und Foto
 - [ ] Kuratorium: Fotos (Pascal Weinmann, Andreas Litwin, Benjamin Grießl, Sascha Eiteneuer)
