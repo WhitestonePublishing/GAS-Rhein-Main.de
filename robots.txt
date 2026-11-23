@@ -1,0 +1,3 @@
+# Vorschau-Phase: Suchmaschinen aussperren. Mit der Freigabe diese Datei löschen.
+User-agent: *
+Disallow: /

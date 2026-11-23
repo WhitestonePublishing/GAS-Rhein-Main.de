@@ -15,6 +15,8 @@ favicon.ico
 .htaccess               Apache-Einstellungen für Strato (Caching, HTTPS-Umleitung vorbereitet)
 assets/css/style.css    Gestaltung
 assets/js/main.js       Countdown und Jahreszahl
+assets/js/gate.js       Vorschau-Sperre (Passwort, nur Testphase)
+robots.txt              Suchmaschinen-Sperre (nur Testphase)
 assets/fonts/           Barlow / Barlow Condensed (woff2)
 assets/img/             Logo, Porträts
 downloads/              Programm als PDF
@@ -25,7 +27,19 @@ downloads/              Programm als PDF
 Den gesamten Inhalt dieses Repositorys (ohne `.git`) per SFTP in das Webverzeichnis der Domain `www.gas-rhein-main.de` hochladen.
 Danach in der `.htaccess` die HTTPS-Umleitung aktivieren, sobald das SSL-Zertifikat aktiv ist.
 
+## Vorschau-Sperre (Testphase)
+
+Bis zur Freigabe blendet `assets/js/gate.js` die Seite hinter einer Passwortabfrage aus (Passwort: `GAS2027`, wird im Browser gemerkt).
+Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchmaschinen werden zusätzlich per `robots.txt` und `noindex` ausgesperrt.
+
+**Zur Freigabe:**
+1. In `index.html`, `impressum.html`, `datenschutz.html` die Zeile `<script src="/assets/js/gate.js"></script>` entfernen
+2. In `index.html` die Zeile `<meta name="robots" content="noindex, nofollow">` entfernen
+3. `robots.txt` und `assets/js/gate.js` löschen, den Block „Vorschau-Sperre“ am Ende von `style.css` entfernen
+
 ## Offene Punkte
+
+- [ ] Vorschau-Sperre entfernen (siehe oben)
 
 - [ ] Anmeldeformular: iframe-URL in `index.html` (Abschnitt `#anmeldung`) eintragen
 - [ ] Anbieter des Anmeldeformulars in `datenschutz.html` nennen
