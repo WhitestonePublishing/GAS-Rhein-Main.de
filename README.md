@@ -30,11 +30,14 @@ Jeder Push auf `main` lädt die Seite automatisch per SFTP auf den Strato-Webspa
 
 | Art | Name | Inhalt |
 |---|---|---|
-| Variable | `SFTP_HOST` | z. B. `ssh.strato.de` |
-| Variable | `SFTP_USER` | SFTP-Benutzername |
-| Variable | `SFTP_TARGET_DIR` | Zielordner der Domain, z. B. `/gas-rhein-main` |
+| Variable | `SFTP_HOST` | Hostname oder IP des Servers (bei Plesk-Servern der Server selbst, nicht `ssh.strato.de`) |
+| Variable | `SFTP_USER` | Systembenutzer des Plesk-Abonnements |
+| Variable | `SFTP_TARGET_DIR` | z. B. `/httpdocs` |
+| Variable (optional) | `SFTP_PROTOCOL` | `sftp` (Standard) oder `ftps` |
+| Variable (optional) | `SFTP_PORT` | Standard 22 bzw. 21 |
 | Secret | `SFTP_PASSWORD` | Passwort des SFTP-Benutzers |
 
+Für SFTP muss in Plesk beim Abonnement unter *Hosting-Einstellungen → Zugriff auf den Server über SSH* „/bin/bash (chrooted)“ o. Ä. gesetzt sein; sonst `SFTP_PROTOCOL=ftps` verwenden.
 Solange etwas fehlt, wird der Upload übersprungen. Hochgeladen werden nur neue oder geänderte Dateien; auf dem Server wird nichts gelöscht.
 Nicht übertragen werden `.git/`, `.github/`, `README.md` und `.gitignore`.
 

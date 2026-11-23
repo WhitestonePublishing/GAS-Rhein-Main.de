@@ -4,9 +4,12 @@
 # Settings → Secrets and variables → Actions):
 #
 #   Variables (Reiter "Variables"):
-#     SFTP_HOST        z. B. ssh.strato.de
-#     SFTP_USER        SFTP-Benutzername bei Strato
-#     SFTP_TARGET_DIR  Zielordner der Domain, z. B. /gas-rhein-main
+#     SFTP_HOST        Hostname oder IP des Servers (bei Plesk: der Server selbst,
+#                      nicht ssh.strato.de)
+#     SFTP_USER        Systembenutzer des Abonnements
+#     SFTP_TARGET_DIR  Zielordner, z. B. /httpdocs
+#     SFTP_PROTOCOL    optional: sftp (Standard) oder ftps
+#     SFTP_PORT        optional: Standard 22 (sftp) bzw. 21 (ftps)
 #
 #   Secrets (Reiter "Secrets"):
 #     SFTP_PASSWORD    Passwort des SFTP-Benutzers
@@ -50,25 +53,38 @@ jobs:
 
       - name: Repository auschecken
         if: steps.cfg.outputs.ready == 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: lftp installieren
         if: steps.cfg.outputs.ready == 'true'
         run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
 
-      - name: Per SFTP hochladen
+      - name: Hochladen
         if: steps.cfg.outputs.ready == 'true'
         env:
           HOST: ${{ vars.SFTP_HOST }}
           USER: ${{ vars.SFTP_USER }}
           DIR: ${{ vars.SFTP_TARGET_DIR }}
+          PROTO: ${{ vars.SFTP_PROTOCOL || 'sftp' }}
+          PORT: ${{ vars.SFTP_PORT }}
           LFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
         run: |
-          lftp -c "
-            set sftp:auto-confirm yes;
+          if [ "$PROTO" = "ftps" ]; then
+            PORT="${PORT:-21}"
+            SETTINGS="set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate no; set ftp:passive-mode true;"
+            URL="ftp://$HOST:$PORT"
+          else
+            PORT="${PORT:-22}"
+            SETTINGS="set sftp:auto-confirm yes;"
+            URL="sftp://$HOST:$PORT"
+          fi
+          set -o pipefail
+          echo "Verbinde mit $PROTO://$HOST:$PORT als $USER, Ziel $DIR"
+          lftp -d -c "
+            $SETTINGS
             set net:max-retries 2;
             set net:timeout 30;
-            open --env-password -u \"$USER\" sftp://$HOST;
+            open --env-password -u \"$USER\" $URL;
             mirror --reverse --verbose --only-newer --parallel=4 \
               --exclude-glob .git/ \
               --exclude-glob .github/ \
@@ -76,5 +92,5 @@ jobs:
               --exclude-glob .gitignore \
               ./ \"$DIR\";
             bye
-          "
+          " 2>&1 | grep -v -i "pass"
           echo "::notice::Veröffentlicht nach $HOST:$DIR"
