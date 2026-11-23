@@ -190,7 +190,11 @@ p { margin: 0; }
 .logo-slot span { font-size: 13px; color: #6B6457; }
 .logo-slot img { max-height: 100px; width: auto; object-fit: contain; }
 .logo-slot--main { height: 180px; }
-.logo-slot--small { height: 110px; }
+.logo-slot--small { height: 130px; }
+.logo-slot--filled { border: 1.5px solid #E4DFD4; transition: transform .15s, box-shadow .15s, border-color .15s; }
+.logo-slot--filled:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(13,27,42,.10); border-color: #C9C2B3; }
+.logo-slot picture { display: contents; }
+.logo-slot--small img { max-height: 90px; max-width: 100%; }
 .tier { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
 .tier small { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 #sponsoren { border-top: 1px solid #DDD7CA; }
