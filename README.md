@@ -40,7 +40,7 @@ Jeder Push auf `main` lädt die Seite automatisch per SFTP auf WSP-Server01 (Ple
 
 Für SFTP muss in Plesk beim Abonnement unter *Hosting-Einstellungen → Zugriff auf den Server über SSH* „/bin/bash (chrooted)“ o. Ä. gesetzt sein; sonst `SFTP_PROTOCOL=ftps` verwenden.
 **SSH-Schlüssel einrichten (einmalig):**
-1. Schlüsselpaar erzeugen (z. B. in PowerShell): `ssh-keygen -t ed25519 -C "github-deploy-gas" -f gas_deploy -N '""'`
+1. Schlüsselpaar erzeugen (z. B. in PowerShell): `ssh-keygen -t rsa -b 4096 -C "github-deploy-gas" -f gas_deploy -N '""'`
 2. Inhalt von `gas_deploy.pub` in Plesk beim Systembenutzer des Abonnements hinterlegen (Erweiterung „SSH Keys“ oder Datei `.ssh/authorized_keys` im Home-Verzeichnis des Abonnements).
 3. Inhalt von `gas_deploy` (privater Schlüssel, komplett inkl. BEGIN/END-Zeilen) als Secret `SFTP_PRIVATE_KEY` speichern. Danach die lokalen Schlüsseldateien sicher ablegen oder löschen.
 
