@@ -22,15 +22,15 @@ assets/img/             Logo, Porträts
 downloads/              Programm als PDF
 ```
 
-## Veröffentlichen (Strato)
+## Veröffentlichen (WSP-Server01)
 
-Jeder Push auf `main` lädt die Seite automatisch per SFTP auf den Strato-Webspace (`.github/workflows/deploy.yml`). Manuell auslösbar unter **Actions → Veröffentlichen (Strato SFTP) → Run workflow**.
+Jeder Push auf `main` lädt die Seite automatisch per SFTP auf WSP-Server01 (Plesk) (`.github/workflows/deploy.yml`). Manuell auslösbar unter **Actions → Veröffentlichen (WSP-Server01) → Run workflow**.
 
 **Einmalige Einrichtung** unter *Settings → Secrets and variables → Actions*:
 
 | Art | Name | Inhalt |
 |---|---|---|
-| Variable | `SFTP_HOST` | Hostname oder IP des Servers (bei Plesk-Servern der Server selbst, nicht `ssh.strato.de`) |
+| Variable | `SFTP_HOST` | `plesk.wsp-server01.de` |
 | Variable | `SFTP_USER` | Systembenutzer des Plesk-Abonnements |
 | Variable | `SFTP_TARGET_DIR` | z. B. `/httpdocs` |
 | Variable (optional) | `SFTP_PROTOCOL` | `sftp` (Standard) oder `ftps` |

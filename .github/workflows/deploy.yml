@@ -1,11 +1,10 @@
-# Veröffentlicht die Webseite per SFTP auf dem Strato-Webspace.
+# Veröffentlicht die Webseite per SFTP auf WSP-Server01 (Plesk).
 #
 # Einrichtung (einmalig, im GitHub-Repository unter
 # Settings → Secrets and variables → Actions):
 #
 #   Variables (Reiter "Variables"):
-#     SFTP_HOST        Hostname oder IP des Servers (bei Plesk: der Server selbst,
-#                      nicht ssh.strato.de)
+#     SFTP_HOST        plesk.wsp-server01.de
 #     SFTP_USER        Systembenutzer des Abonnements
 #     SFTP_TARGET_DIR  Zielordner, z. B. /httpdocs
 #     SFTP_PROTOCOL    optional: sftp (Standard) oder ftps
@@ -16,7 +15,7 @@
 #
 # Solange etwas davon fehlt, wird der Upload übersprungen (kein Fehler).
 
-name: Veröffentlichen (Strato SFTP)
+name: Veröffentlichen (WSP-Server01)
 
 on:
   push:
