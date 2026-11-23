@@ -42,10 +42,10 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 - [ ] Vorschau-Sperre entfernen (siehe oben)
 
 - [x] Anmeldeformular eingebunden (iframe von p263.de)
-- [ ] Anbieter des Anmeldeformulars (p263.de) mit Name/Anschrift und AV-Vertrag in `datenschutz.html` ergänzen
+- [ ] Datenschutz: AV-Vertrag mit Whitestone Publishing UG und Speicherdauer bestätigen
 - [x] Impressum: Anschrift, Kontakt, Verantwortlicher, technische Umsetzung
-- [ ] Impressum: Registergericht und VR-Nummer, Name des stellvertretenden Vorsitzenden
-- [ ] Stellvertretender Vorsitzender: Name und Foto
+- [ ] Nach Eintragung des Vereins: „i. G.“ im Impressum/Datenschutz entfernen, Registergericht und VR-Nummer ergänzen
+- [ ] Stellvertretenden Vorsitzenden ergänzen, sobald benannt (Startseite und Impressum)
 - [ ] Kuratorium: Fotos (Pascal Weinmann, Andreas Litwin, Benjamin Grießl, Sascha Eiteneuer)
 - [ ] Partner- und Sponsorenlogos
 - [ ] Anmeldeschluss, Hinweise zu Parken und Bus/Shuttle
