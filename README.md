@@ -70,7 +70,8 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 - [ ] Stellvertretenden Vorsitzenden ergänzen, sobald benannt (Startseite und Impressum)
 - [ ] Kuratorium: Fotos (Pascal Weinmann, Andreas Litwin, Benjamin Grießl, Sascha Eiteneuer)
 - [ ] Partner- und Sponsorenlogos
-- [ ] Anmeldeschluss, Hinweise zu Parken und Bus/Shuttle
+- [x] Anmeldeschluss (1. März 2027)
+- [ ] Hinweise zu Parken und Bus/Shuttle
 - [ ] Foto Schirmherr durch offizielles Pressefoto ersetzen (aktuell Ausschnitt, Foto: Tobias Koch)
 
 ## Bilder ergänzen
