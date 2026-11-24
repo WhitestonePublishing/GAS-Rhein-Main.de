@@ -212,7 +212,7 @@ p { margin: 0; }
 .register__info p { font-size: 18px; line-height: 1.6; color: var(--ink-soft); }
 .checks { margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 17px; }
 .checks li { display: flex; gap: 12px; align-items: center; }
-.register__frame { flex: 2 1 560px; min-width: 0; background: #fff; border-radius: 12px; padding: 12px; }
+.register__frame { flex: 2 1 560px; min-width: 0; background: #122135; border-radius: 12px; padding: 12px; } /* = Hintergrund des dunklen p263-Designs */
 .register__frame iframe { display: block; width: 100%; border: 0; border-radius: 8px; overflow: hidden; }
 /* Höhe des Anmeldeformulars (p263.de) – passend zur Breite, ohne Scrollbalken.
    Sendet p263 seine Höhe per postMessage, setzt main.js sie exakt. */
