@@ -173,10 +173,12 @@ p { margin: 0; }
 .person__name { font-family: var(--display); font-size: 36px; font-weight: 700; line-height: 1; }
 .curators { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
 .curator { border-radius: 12px; overflow: hidden; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
-.curator__photo { height: 200px; background: var(--navy-panel); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.curator__photo { height: 276px; background: var(--navy-panel); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
 .curator__photo b { font-family: var(--display); font-size: 48px; font-weight: 700; color: #5A6E84; }
 .curator__photo span { font-size: 13px; color: var(--on-dark-muted); }
-.curator__photo img { width: 100%; height: 100%; object-fit: cover; }
+.curator__photo--img { background: var(--navy); justify-content: flex-end; overflow: hidden; }
+.curator__photo--img picture { display: contents; }
+.curator__photo img { width: 220px; height: 276px; object-fit: cover; object-position: center top; }
 .curator__info { padding: 20px; display: flex; flex-direction: column; gap: 4px; }
 .curator__info b { font-family: var(--display); font-size: 24px; font-weight: 700; line-height: 1.1; }
 .curator__info span { font-size: 14px; color: var(--on-dark-muted); }

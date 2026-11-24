@@ -70,7 +70,7 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 - [x] Impressum: Anschrift, Kontakt, Verantwortlicher, technische Umsetzung
 - [ ] Nach Eintragung des Vereins: „i. G.“ im Impressum/Datenschutz entfernen, Registergericht und VR-Nummer ergänzen
 - [x] Stellvertretender Vorsitzender: Sascha Eiteneuer (Startseite und Impressum, Foto freigestellt)
-- [ ] Kuratorium: Fotos (Pascal Weinmann, Andreas Litwin, Benjamin Grießl)
+- [ ] Kuratorium: Fotos (Pascal Weinmann, Benjamin Grießl) – Andreas Litwin erledigt
 - [ ] Partner- und Sponsorenlogos
 - [x] Anmeldeschluss (1. März 2027)
 - [ ] Hinweise zu Parken und Bus/Shuttle
@@ -78,5 +78,5 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 
 ## Bilder ergänzen
 
-- Kuratorium: in `index.html` im jeweiligen `curator__photo` die Initialen durch `<img src="/assets/img/NAME.jpg" alt="Porträt von NAME">` ersetzen (Bild quadratisch oder 4:3, ca. 600 px breit).
+- Kuratorium: Foto freistellen (transparenter Hintergrund), Ausschnitt Kopf bis Hüfte, 600 × 752 px, wie `andreas-litwin.png`. In `index.html` die Karte wie bei Andreas Litwin aufbauen (`curator__photo curator__photo--img`).
 - Partner/Sponsoren: Logos als SVG oder PNG nach `assets/img/partner/` bzw. `assets/img/sponsoren/` legen und den Platzhalter `logo-slot` ersetzen (Vorlage als Kommentar in `index.html`).
