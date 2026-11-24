@@ -7,6 +7,7 @@ AddDefaultCharset UTF-8
 AddType font/woff2 .woff2
 AddType image/webp .webp
 AddType image/svg+xml .svg
+AddType application/manifest+json .webmanifest
 
 # Auf HTTPS und www umleiten – erst aktivieren, wenn das SSL-Zertifikat
 # für www.gas-rhein-main.de bei Strato aktiv ist:
