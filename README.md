@@ -74,7 +74,7 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 - [ ] Partner- und Sponsorenlogos
 - [x] Anmeldeschluss (1. März 2027)
 - [ ] Hinweise zu Parken und Bus/Shuttle
-- [ ] Foto Schirmherr durch offizielles Pressefoto ersetzen (aktuell Ausschnitt, Foto: Tobias Koch)
+- [x] Foto Schirmherr durch offizielles Porträt ersetzt
 
 ## Bilder ergänzen
 
