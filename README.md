@@ -69,7 +69,7 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 - [x] Webserver-Logs: Plesk-Rotation täglich, 14 Dateien → 14 Tage (in Datenschutz eingetragen)
 - [x] Impressum: Anschrift, Kontakt, Verantwortlicher, technische Umsetzung
 - [ ] Nach Eintragung des Vereins: „i. G.“ im Impressum/Datenschutz entfernen, Registergericht und VR-Nummer ergänzen
-- [ ] Stellvertretenden Vorsitzenden ergänzen, sobald benannt (Startseite und Impressum)
+- [x] Stellvertretender Vorsitzender: Sascha Eiteneuer (Startseite und Impressum, Foto freigestellt)
 - [ ] Kuratorium: Fotos (Pascal Weinmann, Andreas Litwin, Benjamin Grießl, Sascha Eiteneuer)
 - [ ] Partner- und Sponsorenlogos
 - [x] Anmeldeschluss (1. März 2027)
