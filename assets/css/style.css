@@ -252,6 +252,10 @@ p { margin: 0; }
 .legal h2 { font-size: 28px; font-weight: 700; margin: 40px 0 12px; }
 .legal p, .legal li { font-size: 17px; line-height: 1.65; color: var(--ink-soft); }
 .legal p + p { margin-top: 12px; }
+.provider { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; margin: 8px 0 16px; padding: 20px 24px; background: #fff; border: 1px solid #E4DFD4; border-radius: 10px; }
+.provider__logo { flex: none; display: block; }
+.provider__logo img { width: 180px; height: auto; }
+.provider p { margin: 0; }
 .legal .hint { background: #FFF4D6; border-left: 4px solid var(--amber); padding: 14px 18px; border-radius: 4px; color: var(--ink); }
 
 @media (max-width: 640px) {
