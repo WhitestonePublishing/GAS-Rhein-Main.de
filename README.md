@@ -66,7 +66,7 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 - [x] Anmeldeformular eingebunden (iframe von p263.de)
 - [x] Datenschutz: Angaben zu P263/Whitestone (Anmeldung, Löschfristen, Hosting) übernommen
 - [ ] AV-Vertrag P263 Fassung 1.0 per E-Mail an info@whitestone-publishing.com annehmen und Bestätigung ablegen
-- [ ] Datenschutz: Speicherdauer der Webserver-Logs für gas-rhein-main.de eintragen (Abschnitt 2)
+- [x] Webserver-Logs: Plesk-Rotation täglich, 14 Dateien → 14 Tage (in Datenschutz eingetragen)
 - [x] Impressum: Anschrift, Kontakt, Verantwortlicher, technische Umsetzung
 - [ ] Nach Eintragung des Vereins: „i. G.“ im Impressum/Datenschutz entfernen, Registergericht und VR-Nummer ergänzen
 - [ ] Stellvertretenden Vorsitzenden ergänzen, sobald benannt (Startseite und Impressum)
