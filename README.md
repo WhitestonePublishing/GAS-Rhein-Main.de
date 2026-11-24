@@ -70,7 +70,7 @@ Das ist kein echter Zugriffsschutz, sondern hält die Seite nur verborgen; Suchm
 - [x] Impressum: Anschrift, Kontakt, Verantwortlicher, technische Umsetzung
 - [ ] Nach Eintragung des Vereins: „i. G.“ im Impressum/Datenschutz entfernen, Registergericht und VR-Nummer ergänzen
 - [x] Stellvertretender Vorsitzender: Sascha Eiteneuer (Startseite und Impressum, Foto freigestellt)
-- [ ] Kuratorium: Fotos (Pascal Weinmann, Andreas Litwin, Benjamin Grießl, Sascha Eiteneuer)
+- [ ] Kuratorium: Fotos (Pascal Weinmann, Andreas Litwin, Benjamin Grießl)
 - [ ] Partner- und Sponsorenlogos
 - [x] Anmeldeschluss (1. März 2027)
 - [ ] Hinweise zu Parken und Bus/Shuttle
