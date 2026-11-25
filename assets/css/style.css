@@ -76,7 +76,7 @@ p { margin: 0; }
 .site-header { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.08); position: sticky; top: 0; z-index: 50; }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding-top: 14px; padding-bottom: 14px; }
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-.brand img { width: 56px; height: 56px; }
+.brand img { width: 63px; height: 56px; border-radius: 6px; background: #fff; }
 .brand span { display: flex; flex-direction: column; line-height: 1.05; }
 .brand b { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: .04em; text-transform: uppercase; color: #fff; }
 .brand i { font-style: normal; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: .18em; text-transform: uppercase; color: var(--amber); }
@@ -154,7 +154,7 @@ p { margin: 0; }
 /* Verein */
 .club-intro { display: flex; flex-wrap: wrap; gap: 56px; }
 .club-intro__text { flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
-.club-intro__text img { width: 140px; height: 140px; }
+.club-intro__text img { width: 158px; height: 140px; border-radius: 10px; background: #fff; }
 .club-intro__text p { font-size: 19px; line-height: 1.65; color: var(--on-dark); }
 .pillars { flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; align-content: start; }
 .pillar { padding: 26px; border-radius: 10px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); display: flex; flex-direction: column; gap: 10px; }
@@ -242,7 +242,7 @@ p { margin: 0; }
 .site-footer .wrap { padding-top: 64px; padding-bottom: 40px; display: flex; flex-direction: column; gap: 40px; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
 .footer-grid > div { display: flex; flex-direction: column; gap: 12px; font-size: 15px; line-height: 1.6; }
-.footer-grid img { width: 72px; height: 72px; }
+.footer-grid img { width: 81px; height: 72px; border-radius: 8px; background: #fff; }
 .footer-grid .name { font-family: var(--display); font-size: 22px; font-weight: 700; color: #fff; text-transform: uppercase; line-height: 1.1; }
 .footer-grid .label { font-size: 13px; letter-spacing: .14em; }
 .thanks { font-size: 16px; color: #E7ECF2; }
